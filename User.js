@@ -1,4 +1,5 @@
-class User {
+
+export default class User {
   constructor(nome, email, nascimento, role, ativo = true) {
     this.nome = nome;
     this.email = email;
@@ -16,4 +17,4 @@ const novoUser = new User("leticia", "let@", "06-07-2006");
 //console.log(novoUser);
 //console.log(novoUser.exibirInfos());
 
-console.log(User.prototype.isPrototypeOf(novoUser));
+//console.log(User.prototype.isPrototypeOf(novoUser));
