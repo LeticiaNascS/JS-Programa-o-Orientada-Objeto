@@ -1,9 +1,9 @@
 export default class User {
-  #nome
-  #email
-  #nascimento
-  #role
-  #ativo
+  #nome;
+  #email;
+  #nascimento;
+  #role;
+  #ativo;
   constructor(nome, email, nascimento, role, ativo = true) {
     this.#nome = nome;
     this.#email = email;
@@ -11,14 +11,24 @@ export default class User {
     this.#role = role || "estudante";
     this.#ativo = ativo;
   }
+  #montaObjUser() {
+    return {
+      nome: this.#nome,
+      email: this.#email,
+      nascimento: this.#nascimento,
+      role: this.#role,
+      ativo: this.#ativo,
+    };
+  }
   criarPerfil() {
     return `${this.#nome}, bem vind@! `;
   }
-  apagarPerfil(){
-    return `${this.#nome} Perfil Apagado com sucesso`
+  apagarPerfil() {
+    return `${this.#nome} Perfil Apagado com sucesso`;
   }
   exibirInfos() {
-    return `${this.#nome}, ${this.#email}`;
+    const objUser = this.#montaObjUser();
+    return `${objUser.nome}, ${objUser.email}`;
   }
 }
 
